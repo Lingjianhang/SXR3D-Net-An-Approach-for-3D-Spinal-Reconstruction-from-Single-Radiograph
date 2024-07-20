@@ -108,10 +108,10 @@ def train_gan(generator, dataloader, num_epochs=80, lr=0.00002, beta1=0.9):
             loss_g.backward()
             optimizer_g.step()
             i = i + 1
-            if i % 108 == 0:
+            if i % 450 == 0:
                 print('[%d/%d][%d/%d]  Loss_G: %.4f'
                       % (epoch, num_epochs, i, 1188, loss_g.item()))
-            if i == 1188:
+            if i == 1350:
                 scheduler.step()
                 print("lr={}".format(optimizer_g.state_dict()['param_groups'][0]['lr']))
                 break
